@@ -1,6 +1,6 @@
 const HomeContainer = ({ children }) => {
   return (
-    <div className="my-2 mx-32 p-2 flex items-center justify-between">
+    <div className="h-screen md:mx-32 sm:mx-12 p-2 flex flex-col justify-evenly">
       {children}
     </div>
   );
