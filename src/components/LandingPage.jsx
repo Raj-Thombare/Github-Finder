@@ -1,4 +1,5 @@
 import logo from "../assets/github-logo.png";
+
 const LandingPage = () => {
   return (
     <div className="my-2 mx-40 p-2 flex items-center justify-between">
