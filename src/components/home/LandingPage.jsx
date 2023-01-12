@@ -1,5 +1,6 @@
 import HomeContainer from "../layouts/HomeContainer";
-import logo from "../../assets/github-logo.png";
+import Image from "../layouts/Image";
+import logo from "../assets/github-logo.png";
 
 const LandingPage = () => {
   return (
@@ -10,7 +11,7 @@ const LandingPage = () => {
           Your site to find programmers quickly and easily!
         </h3>
       </div>
-      <img className="h-auto" src={logo} alt="github logo" width="350px" />
+      <Image className="h-auto" src={logo} alt="github logo" width="350px" />
     </HomeContainer>
   );
 };
