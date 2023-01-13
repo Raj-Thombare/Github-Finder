@@ -3,7 +3,7 @@ const InputForm = () => {
     e.preventDefault();
   };
   return (
-    <form onSubmit={formSubmitHandler} className="flex w-3/6 text-xl">
+    <form onSubmit={formSubmitHandler} className="flex w-7/12 text-xl">
       <input
         type="text"
         placeholder="Eg. Raj-Thombare"
