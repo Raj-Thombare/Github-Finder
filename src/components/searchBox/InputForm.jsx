@@ -1,7 +1,7 @@
-import React from "react";
-
 const InputForm = () => {
-  const formSubmitHandler = () => {};
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+  };
   return (
     <form onSubmit={formSubmitHandler} className="flex w-3/6 text-xl">
       <input

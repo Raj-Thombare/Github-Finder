@@ -1,6 +1,6 @@
 import HomeContainer from "../layouts/HomeContainer";
 import HomeIntro from "./HomeIntro";
-import SearchUser from "../searchbox/InputForm";
+import SearchUser from "../searchbox/SearchUser";
 import Image from "../layouts/Image";
 import logo from "../assets/github-logo.png";
 
