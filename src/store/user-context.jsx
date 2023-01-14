@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export const userData = React.createContext({
+const userContext = React.createContext({
   data: {},
 });
 
-const userDataProvider = ({ children }) => {
-  return <userData.Provider>{children}</userData.Provider>;
+const BASE_URL = "https://api.github.com/users/";
+
+export const UserContextProvider = ({ children }) => {
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    fetch(`${BASE_URL}awesomeab`)
+      .then((res) => res.json())
+      .then((data) => setUserData(data));
+  }, []);
+
+  const userContextValue = {
+    data: userData,
+  };
+
+  return (
+    <userContext.Provider value={userContextValue}>
+      {children}
+    </userContext.Provider>
+  );
 };
+
+export default userContext;
