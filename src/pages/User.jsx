@@ -3,8 +3,8 @@ import UserContext from "../store/user-context";
 
 const User = () => {
   const repoCtx = useContext(UserContext);
-  console.log(repoCtx.repos_url);
-  return <div>User Repositories!</div>;
+  console.log(repoCtx.name);
+  return <div>User Data!</div>;
 };
 
 export default User;
