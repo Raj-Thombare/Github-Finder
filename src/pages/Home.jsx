@@ -1,11 +1,16 @@
-import HomeContainer from "../components/layouts/HomeContainer";
+import { useContext } from "react";
+import UserContext from "../store/user-context";
+
+import HomeContainer from "../components/layout/HomeContainer";
 import HomeIntro from "../components/home/HomeIntro";
 import SearchUser from "../components/searchbox/SearchUser";
 import Footer from "../components/home/Footer";
-import Image from "../components/layouts/Image";
+import Image from "../components/layout/Image";
 import Logo from "../assets/github-logo.png";
 
 const Home = ({ onSearchUser }) => {
+  const { error } = useContext(UserContext);
+
   return (
     <HomeContainer>
       <div>
@@ -19,6 +24,7 @@ const Home = ({ onSearchUser }) => {
           />
         </div>
         <SearchUser onSearchUser={onSearchUser} />
+        {error && <p className="p-2.5 text-lg text-[#141414]">{error}</p>}
       </div>
       <Footer />
     </HomeContainer>
