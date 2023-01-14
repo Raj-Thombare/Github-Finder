@@ -7,10 +7,12 @@ import User from "./pages/User";
 function App() {
   const [userData, setUserData] = useState({});
 
-  const searchHandler = useCallback((userInpput) => {
-    fetch(`${BASE_URL}${userInpput}`)
-      .then((res) => res.json())
-      .then((data) => setUserData(data));
+  const searchHandler = useCallback(async (userInpput) => {
+    if (userInpput) {
+      const response = await fetch(`${BASE_URL}${userInpput}`);
+      const data = await response.json();
+      setUserData(data);
+    }
   }, []);
 
   useEffect(() => {

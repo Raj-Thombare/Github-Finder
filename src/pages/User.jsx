@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import UserContext from "../store/user-context";
 
 const User = () => {
-  const repoCtx = useContext(UserContext);
-  console.log(repoCtx.name);
-  return <div>User Data!</div>;
+  const userCtx = useContext(UserContext);
+
+  return <div>{userCtx.data.name}</div>;
 };
 
 export default User;
