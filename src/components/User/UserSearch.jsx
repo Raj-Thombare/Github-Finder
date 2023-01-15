@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { BASE_URL } from "../../store/user-context";
+import UserContext from "../../store/user-context";
 
 const UserSearch = () => {
   const [text, setText] = useState("");
-  const [userData, setUserData] = useState([]);
+  const { dispatch } = useContext(UserContext);
 
   const userInputHandler = (e) => {
     setText(e.target.value);
@@ -11,10 +12,14 @@ const UserSearch = () => {
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${BASE_URL}${text}`);
-    const data = await response.json();
-    setUserData(data.items);
-    console.log(userData);
+    try {
+      const response = await fetch(`${BASE_URL}${text}`);
+      const users = await response.json();
+      console.log(users);
+      dispatch({ type: "GET_USERS", payload: users.items });
+    } catch (error) {
+      //   console.log(error.message);
+    }
   };
 
   return (
