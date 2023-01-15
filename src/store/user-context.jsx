@@ -6,6 +6,7 @@ const UserContext = React.createContext({
   error: false,
 });
 
-export const BASE_URL = "https://api.github.com/users/";
+// export const BASE_URL = "https://api.github.com/users/";
+export const BASE_URL = "api.github.com/search/users?q=";
 
 export default UserContext;
