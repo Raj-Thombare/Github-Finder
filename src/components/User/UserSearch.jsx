@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+import { BASE_URL } from "../../store/user-context";
 
 const UserSearch = () => {
   const [text, setText] = useState("");
-    const userInputHandler = (e) => {
-      setText(e.target.value);
-    };
+  const [userData, setUserData] = useState([]);
 
-    const formSubmitHandler = (e) => {
-      e.preventDefault();
-      console.log(text);
-    };
+  const userInputHandler = (e) => {
+    setText(e.target.value);
+  };
+
+  const formSubmitHandler = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`${BASE_URL}${text}`);
+    const data = await response.json();
+    setUserData(data.items);
+    console.log(userData);
+  };
 
   return (
     <form onSubmit={formSubmitHandler} className="flex w-7/12 text-xl">

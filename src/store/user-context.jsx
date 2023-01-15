@@ -8,7 +8,7 @@ const UserContext = React.createContext({
   loading: false,
 });
 
-export const BASE_URL = "api.github.com/search/users?q=";
+export const BASE_URL = "https://api.github.com/search/users?q=";
 
 export const UserContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(UserReducer, UserContext);
