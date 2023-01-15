@@ -2,11 +2,14 @@ import React, { useState } from "react";
 
 const UserSearch = () => {
   const [text, setText] = useState("");
-  const userInputHandler = (e) => {};
+    const userInputHandler = (e) => {
+      setText(e.target.value);
+    };
 
-  const formSubmitHandler = (e) => {
-    e.preventDefault();
-  };
+    const formSubmitHandler = (e) => {
+      e.preventDefault();
+      console.log(text);
+    };
 
   return (
     <form onSubmit={formSubmitHandler} className="flex w-7/12 text-xl">

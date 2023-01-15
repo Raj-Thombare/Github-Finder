@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import UserReducer from "../reducer/user-reducer";
 
-const DataContext = React.createContext({
+const UserContext = React.createContext({
   users: [],
   user: {},
   repos: [],
@@ -10,14 +10,14 @@ const DataContext = React.createContext({
 
 export const BASE_URL = "api.github.com/search/users?q=";
 
-export const DataContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(UserReducer, DataContext);
+export const UserContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(UserReducer, UserContext);
 
   return (
-    <DataContext.Provider value={{ ...state, dispatch }}>
+    <UserContext.Provider value={{ ...state, dispatch }}>
       {children}
-    </DataContext.Provider>
+    </UserContext.Provider>
   );
 };
 
-export default DataContext;
+export default UserContext;
