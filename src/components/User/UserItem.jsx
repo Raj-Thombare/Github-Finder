@@ -14,7 +14,7 @@ const UserItem = ({ name, avatar }) => {
         </div>
         <div>
           <h2 className="font-semibold text-xl">{name}</h2>
-          <Link to={`/user/${name}`} className="text-black/50 text-sm">
+          <Link to={`/users/${name}`} className="text-black/50 text-sm">
             Visit Profile
           </Link>
         </div>
