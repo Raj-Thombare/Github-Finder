@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import UserContext from "../../store/user-context";
+import RepoItem from "./RepoItem";
 
 const RepoList = () => {
   const { repos } = useContext(UserContext);
@@ -20,16 +21,8 @@ const RepoList = () => {
     <div>
       <div>
         {repoSchema?.map((repo) => {
-          return (
-            <div key={repo.id} className="p-2 m-4 bg-yellow-300">
-              <a href={repo.url}>{repo.name}</a>
-              <p>{repo.description}</p>
-              <h3>{repo.language}</h3>
-              <span>{repo.stars}</span>
-              <span>{repo.forks}</span>
-              <span>{repo.watchers}</span>
-            </div>
-          );
+          console.log(repo);
+          return <RepoItem repoData={repo} />;
         })}
       </div>
     </div>
