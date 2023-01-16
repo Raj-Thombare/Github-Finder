@@ -12,10 +12,11 @@ const UserSearch = () => {
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
+
     try {
+      dispatch({ type: "SET_LOADING" });
       const response = await fetch(`${BASE_URL}${text}`);
       const users = await response.json();
-      console.log(users);
       dispatch({ type: "GET_USERS", payload: users.items });
     } catch (error) {
       //   console.log(error.message);

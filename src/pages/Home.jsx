@@ -1,14 +1,11 @@
-import { useContext } from "react";
 import Wrapper from "../components/UI/Wrapper";
 import UserSearch from "../components/User/UserSearch";
 import Footer from "../components/UI/Footer";
 import Image from "../components/UI/Image";
-import UserList from "../components/User/UserList";
 import Logo from "../assets/github-logo.png";
-import UserContext from "../store/user-context";
+import UserList from "../components/User/UserList";
 
 const Home = ({ onSearchUser }) => {
-  const { users } = useContext(UserContext);
   return (
     <Wrapper>
       <div className="justify-start">
@@ -30,7 +27,7 @@ const Home = ({ onSearchUser }) => {
         </div>
         <UserSearch onSearchUser={onSearchUser} />
       </div>
-      {users?.length > 0 && <UserList />}
+      <UserList />
       <Footer />
     </Wrapper>
   );
