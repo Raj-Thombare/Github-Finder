@@ -19,12 +19,9 @@ const RepoList = () => {
   });
   return (
     <div>
-      <div>
-        {repoSchema?.map((repo) => {
-          console.log(repo);
-          return <RepoItem repoData={repo} />;
-        })}
-      </div>
+      {repoSchema?.map((repo) => {
+        return <RepoItem id={repo.id} repoData={repo} />;
+      })}
     </div>
   );
 };
