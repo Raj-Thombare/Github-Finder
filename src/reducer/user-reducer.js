@@ -7,6 +7,7 @@ const UserReducer = (state, action) => {
         loading: false,
       };
     case "GET_USER":
+      console.log(action.payload);
       return {
         ...state,
         user: action.payload,
