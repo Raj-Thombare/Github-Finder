@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback, useContext } from "react";
 import { useParams } from "react-router-dom";
 import UserContext from "../store/user-context";
+import RepoList from "../components/Repo/RepoList";
 
 const User = () => {
-  const { dispatch, user, repos } = useContext(UserContext);
+  const { dispatch, user } = useContext(UserContext);
 
   const { login } = useParams();
 
@@ -46,43 +47,12 @@ const User = () => {
     [dispatch]
   );
 
-  const repo = repos?.map((repoData) => {
-    return {
-      id: repoData.id,
-      name: repoData.name,
-      url: repoData.html_url,
-      description: repoData.description,
-      language: repoData.language,
-      forks: repoData.forks_count,
-      stars: repoData.stargazers_count,
-      watchers: repoData.watchers_count,
-    };
-  });
-
   useEffect(() => {
     getUserData(login);
     getUserRepos(repoUrl);
   }, [login, repoUrl, getUserData, getUserRepos]);
 
-  console.log(repo);
-  return (
-    <div>
-      <div>
-        {repos?.map((repo) => {
-          return (
-            <div key={repo.id} className="p-2 m-4 bg-black text-white">
-              <a href={repo.url}>{repo.name}</a>
-              <p>{repo.description}</p>
-              <h3>{repo.language}</h3>
-              <span>{repo.stars}</span>
-              <span>{repo.forks}</span>
-              <span>{repo.watchers}</span>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+  return <RepoList />;
 };
 
 export default User;
