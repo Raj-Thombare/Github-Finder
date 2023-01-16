@@ -17,10 +17,14 @@ const RepoList = () => {
       watchers: repoData.watchers_count,
     };
   });
+
   return (
     <div>
+      <h1 className="text-3xl my-4 p-2 font-bold card-title">
+        Latest Repositories
+      </h1>
       {repoSchema?.map((repo) => {
-        return <RepoItem id={repo.id} repoData={repo} />;
+        return <RepoItem key={repo.id} repoData={repo} />;
       })}
     </div>
   );

@@ -1,15 +1,7 @@
-const RepoItem = ({
-  id,
-  url,
-  name,
-  description,
-  language,
-  stars,
-  forks,
-  watchers,
-}) => {
+const RepoItem = ({ repoData }) => {
+  const { url, name, description, language, stars, forks, watchers } = repoData;
   return (
-    <div key={id} className="p-2 m-4 bg-yellow-300">
+    <div className="p-2 m-4 bg-yellow-300">
       <a href={url}>{name}</a>
       <p>{description}</p>
       <h3>{language}</h3>
