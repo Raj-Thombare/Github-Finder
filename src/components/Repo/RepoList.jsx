@@ -20,7 +20,7 @@ const RepoList = () => {
 
   return (
     <div>
-      <h1 className="text-3xl my-4 p-2 font-bold card-title">
+      <h1 className="text-3xl my-4 p-2 font-bold card-title text-center">
         Latest Repositories
       </h1>
       {repoSchema?.map((repo) => {
