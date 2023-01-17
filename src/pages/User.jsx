@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import UserContext from "../store/user-context";
 import Image from "../components/UI/Image";
 import RepoList from "../components/Repo/RepoList";
+import Navbar from "../components/UI/Navbar";
 
 const User = () => {
   const { dispatch, user } = useContext(UserContext);
@@ -54,12 +55,12 @@ const User = () => {
   }, [login, repoUrl, getUserData, getUserRepos]);
 
   return (
-    <div>
-      <div className="text-4xl p-4 bg-white sticky top-0 shadow-lg">Navbar</div>
+    <div className="bg-[#f0f0f0]">
+      <Navbar />
       <div className="min-w-[100%] flex flex-col md:flex flex-row ">
         <div className="p-5 flex flex-col justify-start min-w-[40%] min-h-fit md:fixed left-0 min-h-screen">
           <div
-            className="card compact side bg-base-100 p-5 flex flex-col justify-center items-center border border-gray-200 rounded-lg shadow-md 
+            className="card compact side bg-base-100 bg-white p-5 flex flex-col justify-center items-center border border-gray-200 rounded-lg shadow-md 
           dark:bg-gray-800 dark:border-gray-700"
           >
             <Image

@@ -18,6 +18,7 @@ const UserSearch = () => {
       const response = await fetch(`${BASE_URL}${text}`);
       const users = await response.json();
       dispatch({ type: "GET_USERS", payload: users.items });
+      setText("");
     } catch (error) {
       //   console.log(error.message);
     }

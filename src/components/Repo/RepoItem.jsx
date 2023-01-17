@@ -1,7 +1,7 @@
 const RepoItem = ({ repoData }) => {
   const { url, name, description, language, stars, forks, watchers } = repoData;
   return (
-    <div className="p-7 m-4 bg-[#f0f0f0] rounded-xl shadow">
+    <div className="p-7 pb-2 m-4 bg-white shadow rounded-lg">
       <div className="flex items-baseline justify-between mb-3">
         <div>
           <a href={url} className="font-semibold text-xl">
@@ -22,10 +22,21 @@ const RepoItem = ({ repoData }) => {
         </div>
       </div>
       <div>
-        <div className="mt-2 flex flex-row justify-between w-full font-light text-sm gap-x-2">
-          <div>{stars} Stars</div>
-          <div>{forks} Forks</div>
-          <div>{watchers} Watching</div>
+        <div className="flex flex-row justify-between w-full font-light text-sm gap-x-2">
+          <dl class="flex flex-row min-w-[100%] justify-between">
+            <div class="flex flex-col items-center justify-center font-light">
+              <dt class="text-normal font-semibold">{stars}</dt>
+              <dd class="text-gray-500 dark:text-gray-400">Stars</dd>
+            </div>
+            <div class="flex flex-col items-center justify-center font-light">
+              <dt class="text-normal font-semibold">{forks}</dt>
+              <dd class="text-gray-500 dark:text-gray-400">Forks</dd>
+            </div>
+            <div class="flex flex-col items-center justify-center font-light">
+              <dt class="text-normal font-semibold">{watchers}</dt>
+              <div class="text-gray-500 dark:text-gray-400">Watching</div>
+            </div>
+          </dl>
         </div>
       </div>
     </div>
