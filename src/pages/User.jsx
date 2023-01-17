@@ -91,13 +91,15 @@ const User = () => {
                 </div>
               </div>
             </dl>
-            <h2 className="font-bold text-2xl">{user?.name}</h2>
+            <h2 className="font-bold text-2xl my-2">{user?.name}</h2>
             <h1 className="font-semibold text-lg">@{user?.username}</h1>
             <div className="text-normal">Works at {user?.company}</div>
             <div className="text-normal">Location: {user?.location}</div>
             <a
               type="button"
               href={user?.github_url}
+              target="_blank"
+              rel="noreferrer"
               class="mt-3 text-white bg-black hover:opacity-75 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
             >
               Visit Profile

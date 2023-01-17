@@ -8,13 +8,13 @@ import UserList from "../components/User/UserList";
 const Home = ({ onSearchUser }) => {
   return (
     <Wrapper>
-      <div className="justify-start">
+      <div className="justify-start px-8 md:px-0">
         <div className="flex justify-between items-center flex-col-reverse mb-9 md:flex-row ">
           <div className="text-center md:text-left p-1">
             <h1 className="text-7xl font-inter font-bold mb-4">
               GitHub Finder
             </h1>
-            <h3 className="text-2xl font-normal">
+            <h3 className="text-2xl font-inter font-normal mt-30 mx-4 md:mx-0">
               Your site to find programmers quickly and easily!
             </h3>
           </div>

@@ -30,12 +30,12 @@ const UserSearch = () => {
       className="flex flex-col items-center w-[100%] md:w-7/12 text-xl md:flex-row"
     >
       <input
-        type="text"
+        type="search"
         onChange={userInputHandler}
         placeholder="Eg. Raj-Thombare"
-        className="bg-[#F0F0F0] mb-5 w-[100%] md:w-9/12	px-4 py-2 rounded-lg md:rounded-l-lg focus:outline-none"
+        className="bg-[#F0F0F0] mb-5 md:mb-0 text-[28px] md:text-[100%] w-[100%] md:w-9/12 p-6 md:p-0	md:px-4 md:py-2 rounded-l-lg rounded-r-lg md:rounded-r-none md:rounded-l-lg focus:outline-none"
       />
-      <button className="p-5 sm:p-0 py-2 w-[45%] rounded-lg md:w-3/12 bg-[#141414] text-[#F0F0F0]  md:rounded-r-lg hover:bg-gray-600">
+      <button className="sm:p-0 p-5 md:py-2 w-[100%] font-bold md:font-normal text-[28px] md:text-[20px] md:w-3/12 bg-[#141414] text-[#F0F0F0] rounded-r-lg rounded-l-lg md:rounded-r-lg md:rounded-l-none ">
         Search
       </button>
     </form>

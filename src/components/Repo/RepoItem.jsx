@@ -1,7 +1,7 @@
 const RepoItem = ({ repoData }) => {
   const { url, name, description, language, stars, forks, watchers } = repoData;
   return (
-    <div className="p-7 pb-2 m-4 bg-white shadow rounded-lg">
+    <div className="p-7 pb-2 m-4 bg-white shadow rounded-lg font-inter">
       <div className="flex items-baseline justify-between mb-3">
         <div>
           <a href={url} className="font-semibold text-xl">
