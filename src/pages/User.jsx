@@ -57,8 +57,8 @@ const User = () => {
   return (
     <div className="bg-[#f0f0f0]">
       <Navbar />
-      <div className="min-w-[100%] flex flex-col md:flex flex-row ">
-        <div className="p-5 flex flex-col justify-start min-w-[40%] min-h-fit md:fixed left-0 min-h-screen">
+      <div className="min-w-[100%] flex flex-col md:flex md:flex-row ">
+        <div className="p-5 flex flex-col justify-start min-w-[40%] min-h-fit md:fixed left-0 mid:min-h-screen">
           <div
             className="card compact side bg-base-100 bg-white p-5 flex flex-col justify-center items-center border border-gray-200 rounded-lg shadow-md 
           dark:bg-gray-800 dark:border-gray-700"
@@ -69,7 +69,7 @@ const User = () => {
               alt="avatar"
               className="rounded-xl mb-3"
             />
-            <dl class="grid max-w-screen-xl grid-cols-2 gap-x-2 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-3 dark:text-white items-baseline">
+            <dl class="grid max-w-screen-xl grid-cols-3 gap-x-2 py-2 px-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-3 dark:text-white items-baseline">
               <div class="flex flex-col items-center justify-center">
                 <dt class="mb-2 text-2xl font-extrabold">{user?.follower}</dt>
                 <dd class="font-light text-gray-500 dark:text-gray-400">

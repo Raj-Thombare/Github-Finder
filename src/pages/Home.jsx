@@ -9,8 +9,8 @@ const Home = ({ onSearchUser }) => {
   return (
     <Wrapper>
       <div className="justify-start">
-        <div className="flex flex-row justify-between items-center">
-          <div className="text-left p-1">
+        <div className="flex justify-between items-center flex-col-reverse mb-9 md:flex-row ">
+          <div className="text-center md:text-left p-1">
             <h1 className="text-7xl font-inter font-bold mb-4">
               GitHub Finder
             </h1>
@@ -19,7 +19,7 @@ const Home = ({ onSearchUser }) => {
             </h3>
           </div>
           <Image
-            className="h-auto"
+            className="h-auto w-[250px] md:w-[350px]"
             src={Logo}
             alt="github logo"
             width="350px"

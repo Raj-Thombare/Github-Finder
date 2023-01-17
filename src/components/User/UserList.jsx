@@ -8,7 +8,7 @@ const UserList = () => {
 
   if (!loading) {
     return (
-      <div className="mt-6 mb-10 grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2">
+      <div className="mt-6 mb-10 grid grid-cols-1 gap-8 place-items-center xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2">
         {users?.map((user) => {
           return (
             <UserItem

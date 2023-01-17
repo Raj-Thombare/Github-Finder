@@ -25,7 +25,10 @@ const UserSearch = () => {
   };
 
   return (
-    <form onSubmit={formSubmitHandler} className="flex w-7/12 text-xl">
+    <form
+      onSubmit={formSubmitHandler}
+      className="flex w-[100%] md:w-7/12 text-xl"
+    >
       <input
         type="text"
         onChange={userInputHandler}
