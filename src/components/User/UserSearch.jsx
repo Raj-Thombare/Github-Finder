@@ -27,15 +27,15 @@ const UserSearch = () => {
   return (
     <form
       onSubmit={formSubmitHandler}
-      className="flex w-[100%] md:w-7/12 text-xl"
+      className="flex flex-col items-center w-[100%] md:w-7/12 text-xl md:flex-row"
     >
       <input
         type="text"
         onChange={userInputHandler}
         placeholder="Eg. Raj-Thombare"
-        className="bg-[#F0F0F0] w-9/12	px-4 py-2 rounded-l-lg focus:outline-none"
+        className="bg-[#F0F0F0] mb-5 w-[100%] md:w-9/12	px-4 py-2 rounded-lg md:rounded-l-lg focus:outline-none"
       />
-      <button className="p-5 sm:p-0 py-2 w-3/12 bg-[#141414] text-[#F0F0F0]  rounded-r-lg hover:bg-gray-600">
+      <button className="p-5 sm:p-0 py-2 w-[45%] rounded-lg md:w-3/12 bg-[#141414] text-[#F0F0F0]  md:rounded-r-lg hover:bg-gray-600">
         Search
       </button>
     </form>
