@@ -58,37 +58,32 @@ const User = () => {
     <div className="bg-[#f0f0f0]">
       <Navbar />
       <div className="min-w-[100%] flex flex-col md:flex md:flex-row ">
-        <div className="p-5 flex flex-col justify-start min-w-[40%] min-h-fit md:fixed left-0 mid:min-h-screen">
-          <div
-            className="card compact side bg-base-100 bg-white p-5 flex flex-col justify-center items-center border border-gray-200 rounded-lg shadow-md 
-          dark:bg-gray-800 dark:border-gray-700"
-          >
+        <div className="p-5 flex flex-col justify-start min-w-[40%] min-h-fit md:fixed left-0 md:min-h-screen">
+          <div className="card compact side bg-base-100 bg-white p-5 flex flex-col justify-center items-center border rounded-lg shadow-md text-center">
             <Image
               src={user?.avatar}
               width="200px"
               alt="avatar"
               className="rounded-xl mb-3"
             />
-            <dl class="grid max-w-screen-xl grid-cols-3 gap-x-2 py-2 px-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-3 dark:text-white items-baseline">
-              <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-2xl font-extrabold">{user?.follower}</dt>
-                <dd class="font-light text-gray-500 dark:text-gray-400">
-                  Follower
-                </dd>
+            <dl className="grid max-w-screen-xl grid-cols-3 gap-x-2 py-2 px-4 mx-auto sm:grid-cols-3 xl:grid-cols-3 items-baseline">
+              <div className="flex flex-col items-center justify-center">
+                <dt className="mb-2 text-2xl font-extrabold">
+                  {user?.follower}
+                </dt>
+                <dd className="font-light">Follower</dd>
               </div>
-              <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-2xl font-extrabold">{user?.following}</dt>
-                <dd class="font-light text-gray-500 dark:text-gray-400">
-                  Following
-                </dd>
+              <div className="flex flex-col items-center justify-center">
+                <dt className="mb-2 text-2xl font-extrabold">
+                  {user?.following}
+                </dt>
+                <dd className="font-light">Following</dd>
               </div>
-              <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-2xl font-extrabold">
+              <div className="flex flex-col items-center justify-center">
+                <dt className="mb-2 text-2xl font-extrabold">
                   {user?.public_repos}
                 </dt>
-                <div class="font-light text-gray-500 dark:text-gray-400">
-                  Repository
-                </div>
+                <div className="font-light">Repository</div>
               </div>
             </dl>
             <h2 className="font-bold text-2xl my-2">{user?.name}</h2>
@@ -100,7 +95,7 @@ const User = () => {
               href={user?.github_url}
               target="_blank"
               rel="noreferrer"
-              class="mt-3 text-white bg-black hover:opacity-75 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
+              className="mt-3 text-white bg-black hover:opacity-75 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
             >
               Visit Profile
             </a>
