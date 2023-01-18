@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import UserItem from "./UserItem";
-import UserContext from "../../store/user-context";
+import UserContext from "../../contexts/user-context";
 import Spinner from "../UI/Spinner";
 
 const UserList = () => {

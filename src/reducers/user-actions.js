@@ -1,4 +1,4 @@
-import { BASE_URL } from "../store/user-context";
+import { BASE_URL } from "../adapters/api";
 
 export const searchUsers = async (text) => {
   const params = new URLSearchParams({ q: text });

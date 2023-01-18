@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import { searchUsers } from "../../context/user-actions";
-import UserContext from "../../store/user-context";
+import { searchUsers } from "../../reducers/user-actions";
+import UserContext from "../../contexts/user-context";
 import { FiSearch } from "react-icons/fi";
 
 const UserSearch = () => {

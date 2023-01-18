@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import User from "./pages/User";
 import NotFound from "./pages/NotFound";
-import { UserContextProvider } from "./store/user-context";
+import { UserContextProvider } from "./contexts/user-context";
 
 function App() {
   return (

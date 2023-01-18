@@ -1,10 +1,10 @@
 import React, { useEffect, useCallback, useContext } from "react";
 import { useParams } from "react-router-dom";
-import UserContext from "../store/user-context";
+import UserContext from "../contexts/user-context";
 import Image from "../components/UI/Image";
 import RepoList from "../components/Repo/RepoList";
 import Navbar from "../components/UI/Navbar";
-import { getUser, getRepos } from "../context/user-actions";
+import { getUser, getRepos } from "../reducers/user-actions";
 
 const User = () => {
   const { dispatch, user } = useContext(UserContext);
