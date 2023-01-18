@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import UserReducer from "../reducer/user-reducer";
+import UserReducer from "../context/user-reducer";
 
 const UserContext = React.createContext({
   users: [],
@@ -8,7 +8,7 @@ const UserContext = React.createContext({
   loading: false,
 });
 
-export const BASE_URL = "https://api.github.com/search/users?q=";
+export const BASE_URL = "https://api.github.com";
 
 export const UserContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(UserReducer, UserContext);

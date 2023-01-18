@@ -4,6 +4,7 @@ import UserContext from "../store/user-context";
 import Image from "../components/UI/Image";
 import RepoList from "../components/Repo/RepoList";
 import Navbar from "../components/UI/Navbar";
+import { getUser, getRepos } from "../context/user-actions";
 
 const User = () => {
   const { dispatch, user } = useContext(UserContext);
@@ -13,46 +14,30 @@ const User = () => {
   const getUserData = useCallback(
     async (login) => {
       dispatch({ type: "SET_LOADING" });
-      const response = await fetch(`https://api.github.com/users/${login}`);
-      const data = await response.json();
+      const user = await getUser(login);
       dispatch({
         type: "GET_USER",
         payload: {
-          name: data.name,
-          username: data.login,
-          location: data.location,
-          twitter: data.twitter_username,
-          public_repos: data.public_repos,
-          repos_url: data.repos_url,
-          follower: data.followers,
-          following: data.following,
-          company: data.company,
-          avatar: data.avatar_url,
-          github_url: data.html_url,
+          name: user.name,
+          username: user.login,
+          location: user.location,
+          public_repos: user.public_repos,
+          follower: user.followers,
+          following: user.following,
+          company: user.company,
+          avatar: user.avatar_url,
+          github_url: user.html_url,
         },
       });
-    },
-    [dispatch]
-  );
-
-  const repoUrl = user?.repos_url;
-
-  const getUserRepos = useCallback(
-    async (repoUrl) => {
-      const response = await fetch(`${repoUrl}?sort=created&per_page=10`);
-      const repoData = await response.json();
-      dispatch({
-        type: "GET_REPOS",
-        payload: repoData,
-      });
+      const repoData = await getRepos(login);
+      dispatch({ type: "GET_REPOS", payload: repoData });
     },
     [dispatch]
   );
 
   useEffect(() => {
     getUserData(login);
-    getUserRepos(repoUrl);
-  }, [login, repoUrl, getUserData, getUserRepos]);
+  }, [login, getUserData]);
 
   return (
     <div className="bg-[#f0f0f0] min-h-screen">

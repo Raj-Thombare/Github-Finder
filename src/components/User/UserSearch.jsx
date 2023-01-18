@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { BASE_URL } from "../../store/user-context";
+import { searchUsers } from "../../context/user-actions";
 import UserContext from "../../store/user-context";
 import { FiSearch } from "react-icons/fi";
 
@@ -14,14 +14,13 @@ const UserSearch = () => {
   const formSubmitHandler = async (e) => {
     e.preventDefault();
 
-    try {
+    if (text.trim().length === 0) {
+      alert("Please enter username");
+    } else {
       dispatch({ type: "SET_LOADING" });
-      const response = await fetch(`${BASE_URL}${text}`);
-      const users = await response.json();
+      const users = await searchUsers(text);
       dispatch({ type: "GET_USERS", payload: users.items });
-      // setText("");
-    } catch (error) {
-      console.log(error.message);
+      setText("");
     }
   };
 
@@ -39,7 +38,10 @@ const UserSearch = () => {
           className="bg-[#F0F0F0] md:w-[90%] md:mb-0 text-[22px] md:text-[90%] w-[100%] md:p-0 md:px-0 md:py-0 rounded-l-lg rounded-r-lg md:rounded-r-none md:rounded-l-lg focus:outline-none"
         />
       </div>
-      <button className="p-3 md:py-2 w-[100%] font-bold md:font-normal text-[22px] md:text-[20px] md:w-3/12 bg-[#141414] text-[#F0F0F0] rounded-r-lg rounded-l-lg md:rounded-r-lg md:rounded-l-none ">
+      <button
+        type="submit"
+        className="p-3 md:py-2 w-[100%] font-bold md:font-normal text-[22px] md:text-[20px] md:w-3/12 bg-[#141414] text-[#F0F0F0] rounded-r-lg rounded-l-lg md:rounded-r-lg md:rounded-l-none "
+      >
         Search
       </button>
     </form>
