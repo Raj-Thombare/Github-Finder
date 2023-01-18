@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { searchUsers } from "../../reducers/user-actions";
+import { searchUsers } from "../../adapters/index";
 import UserContext from "../../contexts/user-context";
 import { FiSearch } from "react-icons/fi";
 
@@ -34,6 +34,7 @@ const UserSearch = () => {
         <input
           type="search"
           onChange={userInputHandler}
+          value={text}
           placeholder="Raj-Thombare"
           className="bg-[#F0F0F0] md:w-[90%] md:mb-0 text-[22px] md:text-[90%] w-[100%] md:p-0 md:px-0 md:py-0 rounded-l-lg rounded-r-lg md:rounded-r-none md:rounded-l-lg focus:outline-none"
         />

@@ -4,7 +4,7 @@ import UserContext from "../contexts/user-context";
 import Image from "../components/UI/Image";
 import RepoList from "../components/Repo/RepoList";
 import Navbar from "../components/UI/Navbar";
-import { getUser, getRepos } from "../reducers/user-actions";
+import { getUser, getRepos } from "../adapters/index";
 
 const User = () => {
   const { dispatch, user } = useContext(UserContext);
@@ -73,8 +73,12 @@ const User = () => {
             </dl>
             <h2 className="font-bold text-2xl my-2">{user?.name}</h2>
             <h1 className="font-semibold text-lg">@{user?.username}</h1>
-            <div className="text-normal">Works at {user?.company}</div>
-            <div className="text-normal">Location: {user?.location}</div>
+            <div className="text-normal">
+              Company: {user?.company || "Not Specified"}
+            </div>
+            <div className="text-normal">
+              Location: {user?.location || "Not Specified"}
+            </div>
             <a
               type="button"
               href={user?.github_url}

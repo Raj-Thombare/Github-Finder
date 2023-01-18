@@ -4,7 +4,7 @@ import User from "./pages/User";
 import NotFound from "./pages/NotFound";
 import { UserContextProvider } from "./contexts/user-context";
 
-function App() {
+const App = () => {
   return (
     <UserContextProvider>
       <Routes>
@@ -14,6 +14,6 @@ function App() {
       </Routes>
     </UserContextProvider>
   );
-}
+};
 
 export default App;
