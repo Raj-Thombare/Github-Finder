@@ -2,10 +2,14 @@ import React, { useState, useContext } from "react";
 import { searchUsers } from "../../adapters/index";
 import UserContext from "../../contexts/user-context";
 import { FiSearch } from "react-icons/fi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const UserSearch = () => {
   const [text, setText] = useState("");
   const { dispatch } = useContext(UserContext);
+
+  const notify = () => toast("Please Enter Username!");
 
   const userInputHandler = (e) => {
     setText(e.target.value);
@@ -15,7 +19,7 @@ const UserSearch = () => {
     e.preventDefault();
 
     if (text.trim().length === 0) {
-      alert("Please enter username");
+      notify();
     } else {
       dispatch({ type: "SET_LOADING" });
       const users = await searchUsers(text);
@@ -45,6 +49,7 @@ const UserSearch = () => {
       >
         Search
       </button>
+      <ToastContainer />
     </form>
   );
 };
