@@ -20,6 +20,7 @@ const UserSearch = () => {
 
     if (text.trim().length === 0) {
       notify();
+      dispatch({ type: "GET_USERS", payload: [] });
     } else {
       dispatch({ type: "SET_LOADING" });
       const users = await searchUsers(text);

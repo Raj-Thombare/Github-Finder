@@ -8,7 +8,13 @@ const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 const App = () => {
   return (
-    <Suspense fallback={<div class="lds-hourglass"></div>}>
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex flex-col justify-center items-center">
+          <div className="lds-hourglass"></div>
+        </div>
+      }
+    >
       <UserContextProvider>
         <Routes>
           <Route path="/" element={<Home />} />
