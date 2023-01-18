@@ -55,7 +55,7 @@ const User = () => {
   }, [login, repoUrl, getUserData, getUserRepos]);
 
   return (
-    <div className="bg-[#f0f0f0]">
+    <div className="bg-[#f0f0f0] min-h-screen">
       <Navbar />
       <div className="min-w-[100%] flex flex-col md:flex md:flex-row ">
         <div className="p-5 flex flex-col justify-start min-w-[40%] min-h-fit md:fixed left-0 md:min-h-screen">
