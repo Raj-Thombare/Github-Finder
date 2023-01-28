@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext } from "react";
 import { searchUsers } from "../../adapters/index";
 import UserContext from "../../contexts/user-context";
 import { FiSearch } from "react-icons/fi";
@@ -10,7 +10,7 @@ const UserSearch = ({ onScroll }) => {
   const { dispatch } = useContext(UserContext);
 
   const notify = () => toast("Please Enter Username!");
-  const inputRef = useRef("");
+
   const userInputHandler = async (e) => {
     setText(e.target.value);
   };
@@ -41,7 +41,6 @@ const UserSearch = ({ onScroll }) => {
           type="search"
           onChange={userInputHandler}
           value={text}
-          ref={inputRef}
           placeholder="Raj-Thombare"
           className="bg-[#F0F0F0] md:w-[90%] md:mb-0 text-[22px] md:text-[90%] w-[100%] md:p-0 md:px-0 md:py-0 rounded-l-lg rounded-r-lg md:rounded-r-none md:rounded-l-lg focus:outline-none"
         />
