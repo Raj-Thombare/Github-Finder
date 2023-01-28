@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { searchUsers } from "../../adapters/index";
 import UserContext from "../../contexts/user-context";
 import { FiSearch } from "react-icons/fi";
@@ -10,7 +10,7 @@ const UserSearch = ({ onScroll }) => {
   const { dispatch } = useContext(UserContext);
 
   const notify = () => toast("Please Enter Username!");
-
+  const inputRef = useRef("");
   const userInputHandler = async (e) => {
     setText(e.target.value);
   };
@@ -38,9 +38,10 @@ const UserSearch = ({ onScroll }) => {
       <div className="flex flex-row  bg-[#F0F0F0] md:items-end md:pl-[8px] mb-5 md:mb-0 text-[28px] md:text-[100%] w-[100%] md:w-[100%] p-3 md:p-0	md:px-4 md:py-2 rounded-l-lg rounded-r-lg md:rounded-r-none md:rounded-l-lg focus:outline-none">
         <FiSearch size={30} className="mr-[5px] py-1" />
         <input
-          type="text"
+          type="search"
           onChange={userInputHandler}
           value={text}
+          ref={inputRef}
           placeholder="Raj-Thombare"
           className="bg-[#F0F0F0] md:w-[90%] md:mb-0 text-[22px] md:text-[90%] w-[100%] md:p-0 md:px-0 md:py-0 rounded-l-lg rounded-r-lg md:rounded-r-none md:rounded-l-lg focus:outline-none"
         />
