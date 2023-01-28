@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Wrapper from "../components/UI/Wrapper";
 import UserSearch from "../components/User/UserSearch";
 import Footer from "../components/UI/Footer";
@@ -6,6 +7,12 @@ import Logo from "../assets/github-logo.png";
 import UserList from "../components/User/UserList";
 
 const Home = ({ onSearchUser }) => {
+  const userListRef = useRef(null);
+
+  const scrollHandler = () => {
+    userListRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <Wrapper>
       <div className="justify-start px-8 md:px-0">
@@ -25,10 +32,10 @@ const Home = ({ onSearchUser }) => {
             width="350px"
           />
         </div>
-        <UserSearch onSearchUser={onSearchUser} />
+        <UserSearch onSearchUser={onSearchUser} onScroll={scrollHandler} />
       </div>
       <UserList />
-      <Footer />
+      <Footer ref={userListRef} />
     </Wrapper>
   );
 };

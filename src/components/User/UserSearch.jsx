@@ -5,13 +5,13 @@ import { FiSearch } from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const UserSearch = () => {
+const UserSearch = ({ onScroll }) => {
   const [text, setText] = useState("");
   const { dispatch } = useContext(UserContext);
 
   const notify = () => toast("Please Enter Username!");
 
-  const userInputHandler = (e) => {
+  const userInputHandler = async (e) => {
     setText(e.target.value);
   };
 
@@ -25,6 +25,7 @@ const UserSearch = () => {
       dispatch({ type: "SET_LOADING" });
       const users = await searchUsers(text);
       dispatch({ type: "GET_USERS", payload: users.items });
+      onScroll();
       setText("");
     }
   };
@@ -37,7 +38,7 @@ const UserSearch = () => {
       <div className="flex flex-row  bg-[#F0F0F0] md:items-end md:pl-[8px] mb-5 md:mb-0 text-[28px] md:text-[100%] w-[100%] md:w-[100%] p-3 md:p-0	md:px-4 md:py-2 rounded-l-lg rounded-r-lg md:rounded-r-none md:rounded-l-lg focus:outline-none">
         <FiSearch size={30} className="mr-[5px] py-1" />
         <input
-          type="search"
+          type="text"
           onChange={userInputHandler}
           value={text}
           placeholder="Raj-Thombare"
